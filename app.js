@@ -24,6 +24,6 @@ app.use((req, res) => {
   res.status(404).send('<h1>404 - Page Not Found</h1>');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server running at http://localhost:${process.env.PORT}`);
 });
