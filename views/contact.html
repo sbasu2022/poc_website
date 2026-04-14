@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CAI — Contact</title>
+  <title>Nexus — Contact</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
   <nav>
-    <a href="/" class="logo">CAI<span>_POC</span></a>
+    <a href="/" class="logo">Ne<span>x</span>us</a>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/products">Products</a></li>
@@ -29,7 +29,7 @@
       <div class="contact-detail">
         <div>
           <strong>Email</strong>
-          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85ede0e9e9eac5ebe0fdf0f6abe1e0f3">[email&#160;protected]</a>
+          hello@nexus.dev
         </div>
         <div>
           <strong>Phone</strong>
@@ -46,8 +46,50 @@
       </div>
     </div>
 
+    <!--
+      WHY NO IFRAME:
+      The Lenoxsoft server returns X-Frame-Options or Content-Security-Policy
+      headers that prevent it from being embedded in an iframe on another domain.
+      This is enforced by the browser and cannot be bypassed from your HTML.
+      The form works fine when visited directly in a browser tab.
+      Solution: Link out to the form in a new tab.
+    -->
     <div class="fade fade-d2">
-      <iframe src="http://www3.lenoxsoft.com/l/989293/2026-04-13/3dfm58" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+      <div style="
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1.25rem;
+        min-height: 320px;
+      ">
+        <div style="
+          width: 56px; height: 56px;
+          border: 1px solid var(--border);
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        ">✉</div>
+        <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem;">Ready to connect?</h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 340px;">
+          Our contact form opens in a new tab. Fill it out and we'll get back to you within one business day.
+        </p>
+        <a
+          href="https://www3.lenoxsoft.com/l/989293/2026-04-13/3dfm58"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+          style="margin-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem;"
+        >
+          Open Contact Form &nbsp;↗
+        </a>
+        <p style="color: var(--muted); font-size: 0.75rem; margin-top: 0.25rem;">Opens securely in a new tab</p>
+      </div>
     </div>
   </div>
 
@@ -56,7 +98,5 @@
     <span>Built with Node.js + Express</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    function handleSubmit(btn) {
-            btn
-    }
+</body>
+</html>
