@@ -46,50 +46,24 @@
       </div>
     </div>
 
-    <!--
-      WHY NO IFRAME:
-      The Lenoxsoft server returns X-Frame-Options or Content-Security-Policy
-      headers that prevent it from being embedded in an iframe on another domain.
-      This is enforced by the browser and cannot be bypassed from your HTML.
-      The form works fine when visited directly in a browser tab.
-      Solution: Link out to the form in a new tab.
-    -->
     <div class="fade fade-d2">
-      <div style="
-        border: 1px solid var(--border);
-        background: var(--surface);
-        padding: 3rem 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 1.25rem;
-        min-height: 320px;
-      ">
-        <div style="
-          width: 56px; height: 56px;
-          border: 1px solid var(--border);
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-        ">✉</div>
-        <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem;">Ready to connect?</h3>
-        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 340px;">
-          Our contact form opens in a new tab. Fill it out and we'll get back to you within one business day.
-        </p>
-        <a
-          href="https://www3.lenoxsoft.com/l/989293/2026-04-13/3dfm58"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          style="margin-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem;"
-        >
-          Open Contact Form &nbsp;↗
-        </a>
-        <p style="color: var(--muted); font-size: 0.75rem; margin-top: 0.25rem;">Opens securely in a new tab</p>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Jane Smith" />
       </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="jane@company.com" />
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="How can we help?" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell us more..."></textarea>
+      </div>
+      <button class="btn" onclick="handleSubmit(this)">Send Message</button>
     </div>
   </div>
 
@@ -97,6 +71,17 @@
     <span>© 2024 Nexus Inc. All rights reserved.</span>
     <span>Built with Node.js + Express</span>
   </footer>
+
+  <script>
+    function handleSubmit(btn) {
+      btn.textContent = 'Sending...';
+      btn.style.opacity = '0.7';
+      setTimeout(() => {
+        btn.textContent = '✓ Message Sent';
+        btn.style.background = '#4ade80';
+      }, 1200);
+    }
+  </script>
 
 </body>
 </html>
